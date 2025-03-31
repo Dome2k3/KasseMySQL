@@ -1,0 +1,187 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh; /* Vollbildhöhe */
+    background-color: #f7f7f7;
+}
+
+#background-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-image: url('./logo.png'); !* Pfad zum Logo *!*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Linke Seite: Buttons */
+#button-panel {
+    width: 40%; /* 40% des Platzes */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Scrollbar für Buttons */
+}
+
+#button-panel h3 {
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button-group button {
+    flex: 1 1 calc(50% - 10px); /* 2 Buttons pro Reihe */
+    padding: 15px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Rechte Seite: Bons und Historie */
+#bon-panel {
+    width: 60%; /* 60% des Platzes */
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+#receipt-section, #history-section {
+    flex: 1;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#receipt-section h3, #history-section h3 {
+    margin-top: 0;
+}
+
+#receipt-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#receipt-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Historie */
+#history-section {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-item {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+/* Scrollbar Styling */
+#button-panel, #receipt-section, #history-section {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f0f0f0;
+}
+
+#button-panel::-webkit-scrollbar, #receipt-section::-webkit-scrollbar, #history-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+#button-panel::-webkit-scrollbar-thumb, #receipt-section::-webkit-scrollbar-thumb, #history-section::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+#button-panel::-webkit-scrollbar-track, #receipt-section::-webkit-scrollbar-track, #history-section::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+/* Buttons für Aktionen (Bon abschließen / zurücksetzen) */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-buttons button:hover {
+    background-color: #218838;
+}
+
+.action-buttons button.remove-pfand {
+    background-color: #fd7e14;
+}
+
+.action-buttons button.remove-pfand:hover {
+    background-color: #e06b10;
+}
+
+.action-buttons button.reset {
+    background-color: #dc3545;
+}
+
+.action-buttons button.reset:hover {
+    background-color: #c82333;
+}
+
+/* Aktueller Bon */
+#total {
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 10px;
+}
