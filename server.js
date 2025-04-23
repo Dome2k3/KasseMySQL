@@ -1,3 +1,5 @@
+require('dotenv').config({ path: './Umgebung.env' });
+
 // MYSQL
 const express = require("express");
 const mysql = require("mysql2");
@@ -26,13 +28,13 @@ app.use(bodyParser.json());
 // });
 
 
-// 🔹 MySQL-Verbindung
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "d0431c45",
-    password: "72xJDjPU28zt8A7DNV4M",
-    database: "d0431c45"
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
 });
+
 
 // // 🔹 Route zum Speichern der Daten
 // app.post('/saveReceipts', (req, res) => {
