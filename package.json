@@ -1,0 +1,19 @@
+{
+  "name": "kassenapp",
+  "version": "1.0.0",
+  "description": "Kassenapp BVT",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "KasseMySQL"
+  },
+  "keywords": [
+    "kasse"
+  ],
+  "author": "Dome2k3",
+  "license": "ISC"
+}
